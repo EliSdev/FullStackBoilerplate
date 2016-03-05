@@ -1,0 +1,22 @@
+{
+  "name": "webapp1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile-dev": "webpack",
+    "compile-prod": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.6",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "webpack": "^1.12.14"
+  }
+}
