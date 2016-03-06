@@ -13,7 +13,7 @@ app.config([
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: '/app/components/home/home.view.html',
+        template: require('./components/home/home.view.html'),
         controller: 'homeCtrl',
         controllerAs: 'vm'
       })

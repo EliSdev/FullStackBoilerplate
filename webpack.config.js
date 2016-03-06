@@ -6,6 +6,8 @@ module.exports = {
     filename: "bundle.js"
   },
   module: {
-    loaders: []
+    loaders: [
+      {test: /\.html$/, exclude: /(node_modules|public\/app\/libs)/, loader: 'raw'}
+    ]
   }
 };
