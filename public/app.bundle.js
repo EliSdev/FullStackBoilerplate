@@ -45,10 +45,35 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var angular = __webpack_require__(1);
-	__webpack_require__(3);
+	var router = __webpack_require__(3);
 
+	var app = angular.module('app', ['ui.router']);
 
-	angular.module("myApp", ['ui.router']);
+	__webpack_require__(4)(app);
+	__webpack_require__(6)(app);
+
+	app.config([
+	  '$stateProvider','$urlRouterProvider', function($stateProvider,$urlRouterProvider) {
+	    $urlRouterProvider.otherwise('/');
+
+	    $stateProvider
+	      .state('home', {
+	        url: '/',
+	        templateUrl: '/app/components/home/home.view.html',
+	        controller: 'homeCtrl',
+	        controllerAs: 'vm'
+	      })
+	      .state('state1', {
+	        url: '/state1',
+	        template: '<p>State 1</p>'
+	      })
+	      .state('state2', {
+	        url: '/state2',
+	        template: '<p>State 2</p>'
+	      });
+
+	  }
+	]);
 
 
 /***/ },
@@ -35035,6 +35060,67 @@
 	  .filter('isState', $IsStateFilter)
 	  .filter('includedByState', $IncludedByStateFilter);
 	})(window, window.angular);
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(ngModule) {
+	  __webpack_require__(5)(ngModule);
+	};
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(ngModule) {
+	  __webpack_require__(9)(ngModule);
+	};
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(ngModule) {
+	  __webpack_require__(7)(ngModule);
+	};
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(ngModule) {
+	  __webpack_require__(8)(ngModule);
+	};
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	module.exports = function(ngModule) {
+	  ngModule.directive('appHeader', [function() {
+	    return {
+	      restrict: 'E',
+	      templateUrl: '/app/shared/header/header.view.html'
+	    };
+	  }]);
+	};
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	module.exports = function(ngModule) {
+	  ngModule.controller('homeCtrl', [function() {
+	    this.greetings = 'Hello World';
+	  }]);
+	};
+
 
 /***/ }
 /******/ ]);

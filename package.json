@@ -2,7 +2,7 @@
   "name": "fullstack boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "compile-dev": "webpack",
     "compile-prod": "webpack",
@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "method-override": "^2.3.5",
